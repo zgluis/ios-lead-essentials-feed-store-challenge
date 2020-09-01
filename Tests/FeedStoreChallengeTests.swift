@@ -7,11 +7,17 @@ import FeedStoreChallenge
 
 class FeedStoreChallengeTests: XCTestCase, FeedStoreSpecs {
 	
-//
-//   We recommend you to implement one test at a time.
-//   Uncomment the test implementations one by one.
-// 	 Follow the process: Make the test pass, commit, and move to the next one.
-//
+    //  ***********************
+    //
+    //  Follow the TDD process:
+    //
+    //  1. Uncomment and run one test at a time (run tests with CMD+U).
+    //  2. Do the minimum to make the test pass and commit.
+    //  3. Refactor if needed and commit again.
+    //
+    //  Repeat this process until all tests are passing.
+    //
+    //  ***********************
 
 	func test_retrieve_deliversEmptyOnEmptyCache() {
 //		let sut = makeSUT()
@@ -93,10 +99,13 @@ class FeedStoreChallengeTests: XCTestCase, FeedStoreSpecs {
 	
 }
 
+//  ***********************
 //
-// Uncomment the following tests if your implementation has failable operations.
-// Otherwise, delete the commented out code!
+//  Uncomment the following tests if your implementation has failable operations.
 //
+//  Otherwise, delete the commented out code!
+//
+//  ***********************
 
 //extension FeedStoreChallengeTests: FailableRetrieveFeedStoreSpecs {
 //
