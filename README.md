@@ -21,6 +21,9 @@ Your custom persistence infrastructure implementation can be backed by any persi
 
 3) Implement **one** `<FeedStore>` implementation of your choice (CoreData, Realm, InMemory, etc.).
 
+	- There shouldn't be any extra logic in the `FeedStore` implementation. 
+		- It should just obey to the retrieve/insert/delete commands.
+
 4) Use the `Tests/FeedStoreChallengeTests.swift` to validate your implementation.
 	- Uncomment (CMD+/) and implement one test at a time following the TDD process: 
 		- Make the test pass, commit, and move to the next one.
