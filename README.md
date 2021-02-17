@@ -45,7 +45,7 @@ Your custom persistence infrastructure implementation can be backed by any persi
 
 	- Create a Pull Request from your branch to the main challenge repo's matching branch.
 
-		- For example, if you chose the `xcode12_4` branch, your PR should be from your branch into the main repo's `xcode12_4` branch (DO NOT MIX Xcode versions or you'll have merge conflicts!).
+		- For example, if you implemented the challenge using the `xcode12_4` branch, your PR should be from your fork's `xcode12_4` branch into the main repo's `xcode12_4` branch (DO NOT MIX Xcode versions or you'll have merge conflicts!).
 
 	- Use the name of your implementation as the title for the Pull Request, for example, **CoreData implementation - Your name**.
 
