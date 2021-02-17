@@ -19,81 +19,81 @@ class FeedStoreChallengeTests: XCTestCase, FeedStoreSpecs {
 	//
 	//  ***********************
 	
-	func test_retrieve_deliversEmptyOnEmptyCache() {
-		//		let sut = makeSUT()
-		//
-		//		assertThatRetrieveDeliversEmptyOnEmptyCache(on: sut)
+	func test_retrieve_deliversEmptyOnEmptyCache() throws {
+//		let sut = try makeSUT()
+//		
+//		assertThatRetrieveDeliversEmptyOnEmptyCache(on: sut)
 	}
 	
-	func test_retrieve_hasNoSideEffectsOnEmptyCache() {
-		//		let sut = makeSUT()
-		//
-		//		assertThatRetrieveHasNoSideEffectsOnEmptyCache(on: sut)
+	func test_retrieve_hasNoSideEffectsOnEmptyCache() throws {
+//		let sut = try makeSUT()
+//
+//		assertThatRetrieveHasNoSideEffectsOnEmptyCache(on: sut)
 	}
 	
-	func test_retrieve_deliversFoundValuesOnNonEmptyCache() {
-		//		let sut = makeSUT()
-		//
-		//		assertThatRetrieveDeliversFoundValuesOnNonEmptyCache(on: sut)
+	func test_retrieve_deliversFoundValuesOnNonEmptyCache() throws {
+//		let sut = try makeSUT()
+//
+//		assertThatRetrieveDeliversFoundValuesOnNonEmptyCache(on: sut)
 	}
 	
-	func test_retrieve_hasNoSideEffectsOnNonEmptyCache() {
-		//		let sut = makeSUT()
-		//
-		//		assertThatRetrieveHasNoSideEffectsOnNonEmptyCache(on: sut)
+	func test_retrieve_hasNoSideEffectsOnNonEmptyCache() throws {
+//		let sut = try makeSUT()
+//
+//		assertThatRetrieveHasNoSideEffectsOnNonEmptyCache(on: sut)
 	}
 	
-	func test_insert_deliversNoErrorOnEmptyCache() {
-		//		let sut = makeSUT()
-		//
-		//		assertThatInsertDeliversNoErrorOnEmptyCache(on: sut)
+	func test_insert_deliversNoErrorOnEmptyCache() throws {
+//		let sut = try makeSUT()
+//
+//		assertThatInsertDeliversNoErrorOnEmptyCache(on: sut)
 	}
 	
-	func test_insert_deliversNoErrorOnNonEmptyCache() {
-		//		let sut = makeSUT()
-		//
-		//		assertThatInsertDeliversNoErrorOnNonEmptyCache(on: sut)
+	func test_insert_deliversNoErrorOnNonEmptyCache() throws {
+//		let sut = try makeSUT()
+//
+//		assertThatInsertDeliversNoErrorOnNonEmptyCache(on: sut)
 	}
 	
-	func test_insert_overridesPreviouslyInsertedCacheValues() {
-		//		let sut = makeSUT()
-		//
-		//		assertThatInsertOverridesPreviouslyInsertedCacheValues(on: sut)
+	func test_insert_overridesPreviouslyInsertedCacheValues() throws {
+//		let sut = try makeSUT()
+//
+//		assertThatInsertOverridesPreviouslyInsertedCacheValues(on: sut)
 	}
 	
-	func test_delete_deliversNoErrorOnEmptyCache() {
-		//		let sut = makeSUT()
-		//
-		//		assertThatDeleteDeliversNoErrorOnEmptyCache(on: sut)
+	func test_delete_deliversNoErrorOnEmptyCache() throws {
+//		let sut = try makeSUT()
+//
+//		assertThatDeleteDeliversNoErrorOnEmptyCache(on: sut)
 	}
 	
-	func test_delete_hasNoSideEffectsOnEmptyCache() {
-		//		let sut = makeSUT()
-		//
-		//		assertThatDeleteHasNoSideEffectsOnEmptyCache(on: sut)
+	func test_delete_hasNoSideEffectsOnEmptyCache() throws {
+//		let sut = try makeSUT()
+//
+//		assertThatDeleteHasNoSideEffectsOnEmptyCache(on: sut)
 	}
 	
-	func test_delete_deliversNoErrorOnNonEmptyCache() {
-		//		let sut = makeSUT()
-		//
-		//		assertThatDeleteDeliversNoErrorOnNonEmptyCache(on: sut)
+	func test_delete_deliversNoErrorOnNonEmptyCache() throws {
+//		let sut = try makeSUT()
+//
+//		assertThatDeleteDeliversNoErrorOnNonEmptyCache(on: sut)
 	}
 	
-	func test_delete_emptiesPreviouslyInsertedCache() {
-		//		let sut = makeSUT()
-		//
-		//		assertThatDeleteEmptiesPreviouslyInsertedCache(on: sut)
+	func test_delete_emptiesPreviouslyInsertedCache() throws {
+//		let sut = try makeSUT()
+//
+//		assertThatDeleteEmptiesPreviouslyInsertedCache(on: sut)
 	}
 	
-	func test_storeSideEffects_runSerially() {
-		//		let sut = makeSUT()
-		//
-		//		assertThatSideEffectsRunSerially(on: sut)
+	func test_storeSideEffects_runSerially() throws {
+//		let sut = try makeSUT()
+//
+//		assertThatSideEffectsRunSerially(on: sut)
 	}
 	
 	// - MARK: Helpers
 	
-	private func makeSUT() -> FeedStore {
+	private func makeSUT() throws -> FeedStore {
 		fatalError("Must be implemented")
 	}
 	
@@ -109,14 +109,14 @@ class FeedStoreChallengeTests: XCTestCase, FeedStoreSpecs {
 
 //extension FeedStoreChallengeTests: FailableRetrieveFeedStoreSpecs {
 //
-//	func test_retrieve_deliversFailureOnRetrievalError() {
-////		let sut = makeSUT()
+//	func test_retrieve_deliversFailureOnRetrievalError() throws {
+////		let sut = try makeSUT()
 ////
 ////		assertThatRetrieveDeliversFailureOnRetrievalError(on: sut)
 //	}
 //
-//	func test_retrieve_hasNoSideEffectsOnFailure() {
-////		let sut = makeSUT()
+//	func test_retrieve_hasNoSideEffectsOnFailure() throws {
+////		let sut = try makeSUT()
 ////
 ////		assertThatRetrieveHasNoSideEffectsOnFailure(on: sut)
 //	}
@@ -125,14 +125,14 @@ class FeedStoreChallengeTests: XCTestCase, FeedStoreSpecs {
 
 //extension FeedStoreChallengeTests: FailableInsertFeedStoreSpecs {
 //
-//	func test_insert_deliversErrorOnInsertionError() {
-////		let sut = makeSUT()
+//	func test_insert_deliversErrorOnInsertionError() throws {
+////		let sut = try makeSUT()
 ////
 ////		assertThatInsertDeliversErrorOnInsertionError(on: sut)
 //	}
 //
-//	func test_insert_hasNoSideEffectsOnInsertionError() {
-////		let sut = makeSUT()
+//	func test_insert_hasNoSideEffectsOnInsertionError() throws {
+////		let sut = try makeSUT()
 ////
 ////		assertThatInsertHasNoSideEffectsOnInsertionError(on: sut)
 //	}
@@ -141,14 +141,14 @@ class FeedStoreChallengeTests: XCTestCase, FeedStoreSpecs {
 
 //extension FeedStoreChallengeTests: FailableDeleteFeedStoreSpecs {
 //
-//	func test_delete_deliversErrorOnDeletionError() {
-////		let sut = makeSUT()
+//	func test_delete_deliversErrorOnDeletionError() throws {
+////		let sut = try makeSUT()
 ////
 ////		assertThatDeleteDeliversErrorOnDeletionError(on: sut)
 //	}
 //
-//	func test_delete_hasNoSideEffectsOnDeletionError() {
-////		let sut = makeSUT()
+//	func test_delete_hasNoSideEffectsOnDeletionError() throws {
+////		let sut = try makeSUT()
 ////
 ////		assertThatDeleteHasNoSideEffectsOnDeletionError(on: sut)
 //	}
