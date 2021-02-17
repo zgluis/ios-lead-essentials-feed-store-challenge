@@ -41,7 +41,13 @@ Your custom persistence infrastructure implementation can be backed by any persi
 
 7) If your implementation persists data to disk (e.g., CoreData/Realm), you must use the `Tests/FeedStoreIntegrationTests.swift` to check this behavior. Uncomment and implement one test at a time following the TDD process: Make the test pass, commit, and move to the next one.
 
-8) When all tests are passing and you're done implementing your solution, create a Pull Request from your branch to the main challenge repo. Use the name of your implementation as the title for the Pull Request, for example, **CoreData implementation - Your name**.
+8) When all tests are passing and you're done implementing your solution:
+
+	- Create a Pull Request from your branch to the main challenge repo using the same branch name.
+	
+		- For example, if you chose the `xcode12_4` branch, your PR should be from your branch into the main repo's `xcode12_4` branch.
+
+	- Use the name of your implementation as the title for the Pull Request, for example, **CoreData implementation - Your name**.
 
 9) Post a comment in the challenge page in the academy with the link to your PR, so we can review your solution and provide feedback.
 
