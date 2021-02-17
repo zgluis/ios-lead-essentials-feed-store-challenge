@@ -13,19 +13,34 @@ Your custom persistence infrastructure implementation can be backed by any persi
 
 1) Fork the latest version of this repository. Here's <a href="https://guides.github.com/activities/forking" target="_blank">how forking works</a>.
 
-2) Open the `FeedStoreChallenge.xcodeproj` project on Xcode 12.2 (you can use other Xcode versions by switching to the appropriate branch, e.g., `xcode11`/`xcode12`).
+2) Open the `FeedStoreChallenge.xcodeproj` project on Xcode 12.4 (you can use other Xcode versions by switching to the appropriate branch, e.g., `xcode11`, `xcode12`, `xcode12_2`, `xcode12_3`).
+
+	- Do not change the indentation in the project.
+
+	- Do not rename the existing classes and files.
 
 3) Implement **one** `<FeedStore>` implementation of your choice (CoreData, Realm, InMemory, etc.).
 
-4) Use the `Tests/FeedStoreChallengeTests.swift` to validate your implementation. Uncomment and implement one test at a time following the TDD process: Make the test pass, commit, and move to the next one.
+4) Use the `Tests/FeedStoreChallengeTests.swift` to validate your implementation.
+	- Uncomment (CMD+/) and implement one test at a time following the TDD process: 
+		- Make the test pass, commit, and move to the next one.
 
-5) If your implementation has failable operations (e.g., it might fail to load data from disk), uncomment and implement the failable test extensions at the bottom of the `Tests/FeedStoreChallengeTests.swift` test file. 
+	- While developing your solutions, run all tests with CMD+U. 
 
-6) If your implementation persists data to disk (e.g., CoreData/Realm), you must use the `Tests/FeedStoreIntegrationTests.swift` to check this behavior. Uncomment and implement one test at a time following the TDD process: Make the test pass, commit, and move to the next one.
+5) Errors should be handled accordingly.
+	- There shouldn't be *any* force-unwrap `!` or `fatalError` in production code.
 
-7) When all tests are passing and you're done implementing your solution, create a Pull Request from your branch to the main challenge repo. Use the name of your implementation as the title for the Pull Request, for example, **"CoreData implementation - Your name"**.
+	- There shouldn't be empty `catch` blocks.
 
-**8) Post a comment in the challenge page in the academy with the link to your PR, so we can review your solution and provide feedback.**
+	- There shouldn't be any `print` statements, such as `print(error)`.
+
+6) If your implementation has failable operations (e.g., it might fail to load data from disk), uncomment and implement the failable test extensions at the bottom of the `Tests/FeedStoreChallengeTests.swift` test file. 
+
+7) If your implementation persists data to disk (e.g., CoreData/Realm), you must use the `Tests/FeedStoreIntegrationTests.swift` to check this behavior. Uncomment and implement one test at a time following the TDD process: Make the test pass, commit, and move to the next one.
+
+8) When all tests are passing and you're done implementing your solution, create a Pull Request from your branch to the main challenge repo. Use the name of your implementation as the title for the Pull Request, for example, **CoreData implementation - Your name**.
+
+9) Post a comment in the challenge page in the academy with the link to your PR, so we can review your solution and provide feedback.
 
 
 ## Guidelines
