@@ -11,10 +11,4 @@ extension FailableInsertFeedStoreSpecs where Self: XCTestCase {
 		
 		XCTAssertNotNil(insertionError, "Expected cache insertion to fail with an error", file: file, line: line)
 	}
-	
-	func assertThatInsertHasNoSideEffectsOnInsertionError(on sut: FeedStore, file: StaticString = #filePath, line: UInt = #line) {
-		insert((uniqueImageFeed(), Date()), to: sut)
-		
-		expect(sut, toRetrieve: .empty, file: file, line: line)
-	}
 }

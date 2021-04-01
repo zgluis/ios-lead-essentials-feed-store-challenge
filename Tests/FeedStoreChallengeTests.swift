@@ -21,7 +21,7 @@ class FeedStoreChallengeTests: XCTestCase, FailableFeedStoreSpecs {
 	
 	func test_retrieve_deliversEmptyOnEmptyCache() throws {
 //		let sut = try makeSUT()
-//		
+//
 //		assertThatRetrieveDeliversEmptyOnEmptyCache(on: sut)
 	}
 	
@@ -44,12 +44,18 @@ class FeedStoreChallengeTests: XCTestCase, FailableFeedStoreSpecs {
 	}
 	
 	func test_retrieve_deliversFailureOnRetrievalError() throws {
+//		let stub = NSManagedObjectContext.alwaysFailingFetchStub()
+//		stub.startIntercepting()
+//
 //		let sut = try makeSUT()
 //
 //		assertThatRetrieveDeliversFailureOnRetrievalError(on: sut)
 	}
 	
 	func test_retrieve_hasNoSideEffectsOnFailure() throws {
+//		let stub = NSManagedObjectContext.alwaysFailingFetchStub()
+//		stub.startIntercepting()
+//
 //		let sut = try makeSUT()
 //
 //		assertThatRetrieveHasNoSideEffectsOnFailure(on: sut)
@@ -74,12 +80,18 @@ class FeedStoreChallengeTests: XCTestCase, FailableFeedStoreSpecs {
 	}
 	
 	func test_insert_deliversErrorOnInsertionError() throws {
+//		let stub = NSManagedObjectContext.alwaysFailingSaveStub()
+//		stub.startIntercepting()
+//
 //		let sut = try makeSUT()
 //
 //		assertThatInsertDeliversErrorOnInsertionError(on: sut)
 	}
 	
 	func test_insert_hasNoSideEffectsOnInsertionError() throws {
+//		let stub = NSManagedObjectContext.alwaysFailingSaveStub()
+//		stub.startIntercepting()
+//
 //		let sut = try makeSUT()
 //
 //		assertThatInsertHasNoSideEffectsOnInsertionError(on: sut)
@@ -110,15 +122,27 @@ class FeedStoreChallengeTests: XCTestCase, FailableFeedStoreSpecs {
 	}
 	
 	func test_delete_deliversErrorOnDeletionError() throws {
+//		let stub = NSManagedObjectContext.alwaysFailingSaveStub()
+//		stub.startIntercepting()
+//
 //		let sut = try makeSUT()
 //
 //		assertThatDeleteDeliversErrorOnDeletionError(on: sut)
 	}
 	
 	func test_delete_hasNoSideEffectsOnDeletionError() throws {
+//		let stub = NSManagedObjectContext.alwaysFailingSaveStub()
+//		let feed = uniqueImageFeed()
+//		let timestamp = Date()
 //		let sut = try makeSUT()
 //
-//		assertThatDeleteHasNoSideEffectsOnDeletionError(on: sut)
+//		insert((feed, timestamp), to: sut)
+//
+//		stub.startIntercepting()
+//
+//		deleteCache(from: sut)
+//
+//		expect(sut, toRetrieve: .found(feed: feed, timestamp: timestamp))
 	}
 	
 	func test_storeSideEffects_runSerially() throws {
