@@ -2,7 +2,7 @@
 
 ![](https://github.com/essentialdevelopercom/ios-lead-essentials-feed-store-challenge/workflows/CI/badge.svg)
 
-You are called to build a new infrastructure component that conforms to the `<FeedStore>` protocol using **Core Data**.
+You are called to build a new infrastructure component that conforms to the `<FeedStore>` protocol using **Core Data** to persist the feed.
 
 ## Instructions
 
@@ -23,6 +23,8 @@ You are called to build a new infrastructure component that conforms to the `<Fe
 			- For example, *don't* check if the array of images is empty - and *don't* replace optional values with default values such as `Date()`.
 
 			- This kind of logic shouldn't be in the infrastructure store implementation.
+
+	- We already provided the Core Data boilerplate and the tests.
 
 4) Use the `Tests/FeedStoreChallengeTests.swift` to validate your implementation conforms to the store specs.
 	
