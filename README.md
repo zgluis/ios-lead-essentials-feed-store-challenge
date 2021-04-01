@@ -2,12 +2,7 @@
 
 ![](https://github.com/essentialdevelopercom/ios-lead-essentials-feed-store-challenge/workflows/CI/badge.svg)
 
-You are called to build your own persistence infrastructure implementation by creating a new component that conforms to the `<FeedStore>` protocol.
-
-Your custom persistence infrastructure implementation can be backed by any persistence stack you wish, i.e. CoreData, Realm, in memory, etc, as shown in the diagram below.
-
-![Infrastructure Dependency Diagram](infrastructure_dependency_diagram.png)
-
+You are called to build a new infrastructure component that conforms to the `<FeedStore>` protocol using **Core Data**.
 
 ## Instructions
 
@@ -19,37 +14,51 @@ Your custom persistence infrastructure implementation can be backed by any persi
 
 	- Do not rename the existing classes and files.
 
-3) Implement **one** `<FeedStore>` implementation of your choice (CoreData, Realm, InMemory, etc.).
+3) Implement a `<FeedStore>` protocol implementation using **Core Data** in the `CoreDataFeedStore.swift` file.
 
-	- There shouldn't be any extra logic in the `FeedStore` implementation. 
-		- It should just obey to the retrieve/insert/delete commands.
+	- There shouldn't be any extra logic in the `CoreDataFeedStore` implementation. 
+		
+		- It should just obey to the retrieve/insert/delete commands without any extra logic.
+			
+			- For example, *don't* check if the array of images is empty - and *don't* replace optional values with default values such as `Date()`.
 
-4) Use the `Tests/FeedStoreChallengeTests.swift` to validate your implementation.
+			- This kind of logic shouldn't be in the infrastructure store implementation.
+
+4) Use the `Tests/FeedStoreChallengeTests.swift` to validate your implementation conforms to the store specs.
+	
 	- Uncomment (CMD+/) and implement one test at a time following the TDD process: 
+	
 		- Make the test pass, commit, and move to the next one.
 
-	- While developing your solutions, run all tests with CMD+U. 
+	- While developing your solutions, run all tests with CMD+U.
 
-5) Errors should be handled accordingly.
+5) Use the `Tests/FeedStoreIntegrationTests.swift` to validate that your implementation persists data to disk correctly.
+
+	- Uncomment and implement one integration test at a time following the TDD process: Make the test pass, commit, and move to the next one.
+
+6) Errors should be handled accordingly.
+	
 	- There shouldn't be *any* force-unwrap `!` or `fatalError` in production code.
 
 	- There shouldn't be empty `catch` blocks.
 
 	- There shouldn't be any `print` statements, such as `print(error)`.
 
-6) If your implementation has failable operations (e.g., it might fail to load data from disk), uncomment and implement the failable test extensions at the bottom of the `Tests/FeedStoreChallengeTests.swift` test file. 
-
-7) If your implementation persists data to disk (e.g., CoreData/Realm), you must use the `Tests/FeedStoreIntegrationTests.swift` to check this behavior. Uncomment and implement one test at a time following the TDD process: Make the test pass, commit, and move to the next one.
-
-8) When all tests are passing and you're done implementing your solution:
+7) When all tests are passing and you're done implementing your solution:
 
 	- Create a Pull Request from your branch to the main challenge repo's matching branch.
 
 		- For example, if you implemented the challenge using the `xcode12_4` branch, your PR should be from your fork's `xcode12_4` branch into the main repo's `xcode12_4` branch (DO NOT MIX Xcode versions or you'll have merge conflicts!).
 
-	- Use the name of your implementation as the title for the Pull Request, for example, **CoreData implementation - Your name**.
+	- The title of the Pull Request should be: **Your Name - Feed Store Challenge**.
 
-9) Post a comment in the challenge page in the academy with the link to your PR, so we can review your solution and provide feedback.
+8) Review your code in the Pull Request (PR) and make sure it follows **all** the instructions above. 
+
+	- If it doesn't, make the appropriate changes, push, and review your code in the PR again.
+
+9) After you review your code and it follows **all** the instructions above:
+	
+	- Post a comment in the challenge page in the academy with the link to your PR, so we can review your solution and provide feedback.
 
 
 ## Guidelines

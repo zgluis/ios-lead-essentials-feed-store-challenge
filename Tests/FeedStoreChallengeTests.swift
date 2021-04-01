@@ -5,7 +5,7 @@
 import XCTest
 import FeedStoreChallenge
 
-class FeedStoreChallengeTests: XCTestCase, FeedStoreSpecs {
+class FeedStoreChallengeTests: XCTestCase, FailableFeedStoreSpecs {
 	
 	//  ***********************
 	//
@@ -43,6 +43,18 @@ class FeedStoreChallengeTests: XCTestCase, FeedStoreSpecs {
 //		assertThatRetrieveHasNoSideEffectsOnNonEmptyCache(on: sut)
 	}
 	
+	func test_retrieve_deliversFailureOnRetrievalError() throws {
+//		let sut = try makeSUT()
+//
+//		assertThatRetrieveDeliversFailureOnRetrievalError(on: sut)
+	}
+	
+	func test_retrieve_hasNoSideEffectsOnFailure() throws {
+//		let sut = try makeSUT()
+//
+//		assertThatRetrieveHasNoSideEffectsOnFailure(on: sut)
+	}
+	
 	func test_insert_deliversNoErrorOnEmptyCache() throws {
 //		let sut = try makeSUT()
 //
@@ -59,6 +71,18 @@ class FeedStoreChallengeTests: XCTestCase, FeedStoreSpecs {
 //		let sut = try makeSUT()
 //
 //		assertThatInsertOverridesPreviouslyInsertedCacheValues(on: sut)
+	}
+	
+	func test_insert_deliversErrorOnInsertionError() throws {
+//		let sut = try makeSUT()
+//
+//		assertThatInsertDeliversErrorOnInsertionError(on: sut)
+	}
+	
+	func test_insert_hasNoSideEffectsOnInsertionError() throws {
+//		let sut = try makeSUT()
+//
+//		assertThatInsertHasNoSideEffectsOnInsertionError(on: sut)
 	}
 	
 	func test_delete_deliversNoErrorOnEmptyCache() throws {
@@ -85,6 +109,18 @@ class FeedStoreChallengeTests: XCTestCase, FeedStoreSpecs {
 //		assertThatDeleteEmptiesPreviouslyInsertedCache(on: sut)
 	}
 	
+	func test_delete_deliversErrorOnDeletionError() throws {
+//		let sut = try makeSUT()
+//
+//		assertThatDeleteDeliversErrorOnDeletionError(on: sut)
+	}
+	
+	func test_delete_hasNoSideEffectsOnDeletionError() throws {
+//		let sut = try makeSUT()
+//
+//		assertThatDeleteHasNoSideEffectsOnDeletionError(on: sut)
+	}
+	
 	func test_storeSideEffects_runSerially() throws {
 //		let sut = try makeSUT()
 //
@@ -93,64 +129,11 @@ class FeedStoreChallengeTests: XCTestCase, FeedStoreSpecs {
 	
 	// - MARK: Helpers
 	
-	private func makeSUT() throws -> FeedStore {
-		fatalError("Must be implemented")
+	private func makeSUT(file: StaticString = #filePath, line: UInt = #line) throws -> FeedStore {
+		let inMemoryStoreURL = URL(fileURLWithPath: "/dev/null")
+		let sut = try CoreDataFeedStore(storeURL: inMemoryStoreURL)
+		trackForMemoryLeaks(sut, file: file, line: line)
+		return sut
 	}
 	
 }
-
-//  ***********************
-//
-//  Uncomment the following tests if your implementation has failable operations.
-//
-//  Otherwise, delete the commented out code!
-//
-//  ***********************
-
-//extension FeedStoreChallengeTests: FailableRetrieveFeedStoreSpecs {
-//
-//	func test_retrieve_deliversFailureOnRetrievalError() throws {
-////		let sut = try makeSUT()
-////
-////		assertThatRetrieveDeliversFailureOnRetrievalError(on: sut)
-//	}
-//
-//	func test_retrieve_hasNoSideEffectsOnFailure() throws {
-////		let sut = try makeSUT()
-////
-////		assertThatRetrieveHasNoSideEffectsOnFailure(on: sut)
-//	}
-//
-//}
-
-//extension FeedStoreChallengeTests: FailableInsertFeedStoreSpecs {
-//
-//	func test_insert_deliversErrorOnInsertionError() throws {
-////		let sut = try makeSUT()
-////
-////		assertThatInsertDeliversErrorOnInsertionError(on: sut)
-//	}
-//
-//	func test_insert_hasNoSideEffectsOnInsertionError() throws {
-////		let sut = try makeSUT()
-////
-////		assertThatInsertHasNoSideEffectsOnInsertionError(on: sut)
-//	}
-//
-//}
-
-//extension FeedStoreChallengeTests: FailableDeleteFeedStoreSpecs {
-//
-//	func test_delete_deliversErrorOnDeletionError() throws {
-////		let sut = try makeSUT()
-////
-////		assertThatDeleteDeliversErrorOnDeletionError(on: sut)
-//	}
-//
-//	func test_delete_hasNoSideEffectsOnDeletionError() throws {
-////		let sut = try makeSUT()
-////
-////		assertThatDeleteHasNoSideEffectsOnDeletionError(on: sut)
-//	}
-//
-//}
