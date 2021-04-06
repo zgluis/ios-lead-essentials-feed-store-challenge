@@ -6,7 +6,6 @@ import XCTest
 import FeedStoreChallenge
 
 class FeedStoreChallengeTests: XCTestCase, FailableFeedStoreSpecs {
-	
 	//  ***********************
 	//
 	//  Follow the TDD process:
@@ -159,5 +158,4 @@ class FeedStoreChallengeTests: XCTestCase, FailableFeedStoreSpecs {
 		trackForMemoryLeaks(sut, file: file, line: line)
 		return sut
 	}
-	
 }

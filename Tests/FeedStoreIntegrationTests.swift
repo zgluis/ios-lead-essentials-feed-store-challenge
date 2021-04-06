@@ -6,7 +6,6 @@ import XCTest
 import FeedStoreChallenge
 
 class FeedStoreIntegrationTests: XCTestCase {
-	
 	//  ***********************
 	//
 	//  Implement these Integration Tests *after*
@@ -104,5 +103,4 @@ class FeedStoreIntegrationTests: XCTestCase {
 	private func cachesDirectory() -> URL {
 		FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
 	}
-
 }

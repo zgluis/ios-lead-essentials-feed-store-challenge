@@ -6,7 +6,6 @@ import XCTest
 import FeedStoreChallenge
 
 extension FeedStoreSpecs where Self: XCTestCase {
-	
 	func assertThatRetrieveDeliversEmptyOnEmptyCache(on sut: FeedStore, file: StaticString = #filePath, line: UInt = #line) {
 		expect(sut, toRetrieve: .empty, file: file, line: line)
 	}
@@ -108,5 +107,4 @@ extension FeedStoreSpecs where Self: XCTestCase {
 		
 		wait(for: [op1, op2, op3, op4], timeout: 5.0, enforceOrder: true)
 	}
-	
 }

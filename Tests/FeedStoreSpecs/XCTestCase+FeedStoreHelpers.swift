@@ -57,7 +57,7 @@ extension XCTestCase {
 		sut.retrieve { retrievedResult in
 			switch (expectedResult, retrievedResult) {
 			case (.empty, .empty),
-				 (.failure, .failure):
+			     (.failure, .failure):
 				break
 				
 			case let (.found(expectedFeed, expectedTimestamp), .found(retrievedFeed, retrievedTimestamp)):

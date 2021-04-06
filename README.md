@@ -14,6 +14,8 @@ You are called to build a new infrastructure component that conforms to the `<Fe
 
 	- Do not rename the existing classes and files.
 
+	- Important: Every time you build the project, it'll automatically reformat the modified files with SwiftFormat to maintain the code consistent.
+
 3) Implement a `<FeedStore>` protocol implementation using **Core Data** in the `CoreDataFeedStore.swift` file.
 
 	- There shouldn't be any extra logic in the `CoreDataFeedStore` implementation. 
