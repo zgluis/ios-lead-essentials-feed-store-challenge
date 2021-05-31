@@ -8,7 +8,11 @@ You are called to build a new infrastructure component that conforms to the `<Fe
 
 1) Fork the latest version of this repository. Here's <a href="https://guides.github.com/activities/forking" target="_blank">how forking works</a>.
 
-2) Open the `FeedStoreChallenge.xcodeproj` project on Xcode 12.4 (you can use other Xcode versions by switching to the appropriate branch, e.g., `xcode11`, `xcode12`, `xcode12_2`, `xcode12_3`).
+2) Open the `FeedStoreChallenge.xcodeproj` project on Xcode 12.5.
+	
+	- Older Xcode versions are not supported.
+	
+	- Challenges submitted with branches other than `xcode12_5` will be rejected.
 
 	- Do not change the indentation in the project.
 
