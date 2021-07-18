@@ -15,13 +15,13 @@ extension ManagedCache {
 		return NSFetchRequest<ManagedCache>(entityName: "ManagedCache")
 	}
 
-	@NSManaged public var timeStamp: Date
+	@NSManaged public var timestamp: Date
 	@NSManaged public var feedImage: NSOrderedSet
 
 	convenience init(context: NSManagedObjectContext, feed: [LocalFeedImage], timestamp: Date) {
 		self.init(context: context)
-		self.timeStamp = timestamp
 		self.feedImage = NSOrderedSet(array: feed.map { localFeed in
+		self.timestamp = timestamp
 			let managedFeedImage = ManagedFeedImage(context: context)
 			managedFeedImage.id = localFeed.id
 			managedFeedImage.imageDescription = localFeed.description
