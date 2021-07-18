@@ -32,8 +32,29 @@ public final class CoreDataFeedStore: FeedStore {
 		context.perform {
 			let fetchRequest: NSFetchRequest = ManagedCache.fetchRequest()
 			do {
-				let _ = try self.context.fetch(fetchRequest)
-				completion(.empty)
+				let result = try self.context.fetch(fetchRequest)
+				if result.isEmpty {
+					completion(.empty)
+				} else {
+					if let managedCache = result.first {
+						let localFeedImages = managedCache.feedImage
+							.compactMap { ($0 as? ManagedFeedImage) }
+							.map { LocalFeedImage(
+								id: $0.id,
+								description: $0.imageDescription,
+								location: $0.location,
+								url: $0.url
+							) }
+
+						if localFeedImages.isEmpty {
+							completion(.empty)
+						} else {
+							completion(.found(feed: localFeedImages, timestamp: managedCache.timeStamp))
+						}
+					} else {
+						completion(.empty)
+					}
+				}
 			} catch {}
 		}
 	}
