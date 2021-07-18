@@ -30,11 +30,10 @@ public final class CoreDataFeedStore: FeedStore {
 
 	public func retrieve(completion: @escaping RetrievalCompletion) {
 		context.perform {
-			let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ManagedFeedImage")
+			let fetchRequest: NSFetchRequest = ManagedCache.fetchRequest()
 			do {
-				if let _ = try self.context.fetch(fetchRequest) as? [NSManagedObject] {
-					completion(.empty)
-				}
+				let _ = try self.context.fetch(fetchRequest)
+				completion(.empty)
 			} catch {}
 		}
 	}
