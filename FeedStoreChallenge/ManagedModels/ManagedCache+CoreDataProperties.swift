@@ -15,8 +15,8 @@ extension ManagedCache {
 		return NSFetchRequest<ManagedCache>(entityName: "ManagedCache")
 	}
 
-	@NSManaged public var timeStamp: Date?
-	@NSManaged public var feedImage: NSOrderedSet?
+	@NSManaged public var timeStamp: Date
+	@NSManaged public var feedImage: NSOrderedSet
 }
 
 // MARK: Generated accessors for feedImage
