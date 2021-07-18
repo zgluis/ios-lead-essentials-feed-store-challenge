@@ -39,7 +39,9 @@ public final class CoreDataFeedStore: FeedStore {
 				} else {
 					completion(.empty)
 				}
-			} catch {}
+			} catch {
+				completion(.failure(error))
+			}
 		}
 	}
 
