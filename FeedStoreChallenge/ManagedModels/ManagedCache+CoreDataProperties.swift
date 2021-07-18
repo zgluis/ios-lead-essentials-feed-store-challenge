@@ -18,6 +18,19 @@ extension ManagedCache {
 	@NSManaged public var timeStamp: Date
 	@NSManaged public var feedImage: NSOrderedSet
 
+	convenience init(context: NSManagedObjectContext, feed: [LocalFeedImage], timestamp: Date) {
+		self.init(context: context)
+		self.timeStamp = timestamp
+		self.feedImage = NSOrderedSet(array: feed.map { localFeed in
+			let managedFeedImage = ManagedFeedImage(context: context)
+			managedFeedImage.id = localFeed.id
+			managedFeedImage.imageDescription = localFeed.description
+			managedFeedImage.location = localFeed.location
+			managedFeedImage.url = localFeed.url
+			return managedFeedImage
+		})
+	}
+
 	func toModels() -> [LocalFeedImage] {
 		return feedImage.compactMap { ($0 as? ManagedFeedImage) }
 			.map { LocalFeedImage(
