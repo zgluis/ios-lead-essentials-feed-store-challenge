@@ -33,8 +33,7 @@ public final class CoreDataFeedStore: FeedStore {
 			let fetchRequest: NSFetchRequest = ManagedCache.fetchRequest()
 			do {
 				let result = try self.context.fetch(fetchRequest)
-				if let managedCache = result.first,
-				   managedCache.feedImage.count > .zero {
+				if let managedCache = result.first {
 					completion(.found(feed: managedCache.toModels(), timestamp: managedCache.timestamp))
 				} else {
 					completion(.empty)
