@@ -55,10 +55,11 @@ public final class CoreDataFeedStore: FeedStore {
 						try self.context.save()
 						completion(nil)
 					} catch {
-						context.rollback()
 						completion(error)
 					}
 				}
+			} else {
+				completion(error)
 			}
 		}
 	}
@@ -71,8 +72,11 @@ public final class CoreDataFeedStore: FeedStore {
 			let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
 			do {
 				try context.execute(batchDeleteRequest)
+				try self.context.save()
 				completion(nil)
-			} catch {}
+			} catch {
+				completion(error)
+			}
 		}
 	}
 }
