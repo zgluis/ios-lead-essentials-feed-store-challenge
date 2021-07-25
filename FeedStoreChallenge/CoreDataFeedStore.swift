@@ -47,18 +47,18 @@ public final class CoreDataFeedStore: FeedStore {
 
 	public func insert(_ feed: [LocalFeedImage], timestamp: Date, completion: @escaping InsertionCompletion) {
 		let context = context
-		context.perform {
-			let fetchRequest: NSFetchRequest = ManagedCache.fetchRequest()
-			do {
-				let result = try self.context.fetch(fetchRequest)
-				result.first.map(context.delete)
-
-				let _ = ManagedCache(context: context, feed: feed, timestamp: timestamp)
-				try self.context.save()
-				completion(nil)
-			} catch {
-				context.rollback()
-				completion(error)
+		deleteCachedFeed { error in
+			if error == nil {
+				context.perform {
+					do {
+						let _ = ManagedCache(context: context, feed: feed, timestamp: timestamp)
+						try self.context.save()
+						completion(nil)
+					} catch {
+						context.rollback()
+						completion(error)
+					}
+				}
 			}
 		}
 	}
