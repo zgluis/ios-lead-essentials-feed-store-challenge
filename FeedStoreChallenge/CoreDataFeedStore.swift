@@ -57,6 +57,7 @@ public final class CoreDataFeedStore: FeedStore {
 				try self.context.save()
 				completion(nil)
 			} catch {
+				context.rollback()
 				completion(error)
 			}
 		}
