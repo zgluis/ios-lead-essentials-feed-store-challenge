@@ -56,7 +56,9 @@ public final class CoreDataFeedStore: FeedStore {
 				let _ = ManagedCache(context: context, feed: feed, timestamp: timestamp)
 				try self.context.save()
 				completion(nil)
-			} catch {}
+			} catch {
+				completion(error)
+			}
 		}
 	}
 
