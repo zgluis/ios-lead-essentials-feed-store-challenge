@@ -11,15 +11,15 @@ import Foundation
 import CoreData
 
 @objc(ManagedCache)
-public class ManagedCache: NSManagedObject {
-	@nonobjc public class func fetchRequest() -> NSFetchRequest<ManagedCache> {
+final class ManagedCache: NSManagedObject {
+	@nonobjc class func fetchRequest() -> NSFetchRequest<ManagedCache> {
 		let request = NSFetchRequest<ManagedCache>(entityName: entity().name!)
 		request.returnsObjectsAsFaults = false
 		return request
 	}
 
-	@NSManaged public var timestamp: Date
-	@NSManaged public var feedImages: NSOrderedSet
+	@NSManaged var timestamp: Date
+	@NSManaged var feedImages: NSOrderedSet
 
 	convenience init(context: NSManagedObjectContext, feed: [LocalFeedImage], timestamp: Date) {
 		self.init(context: context)
