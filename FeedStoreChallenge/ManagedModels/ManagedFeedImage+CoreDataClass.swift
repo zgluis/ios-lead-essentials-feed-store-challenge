@@ -12,10 +12,6 @@ import CoreData
 
 @objc(ManagedFeedImage)
 final class ManagedFeedImage: NSManagedObject {
-	@nonobjc class func fetchRequest() -> NSFetchRequest<ManagedFeedImage> {
-		return NSFetchRequest<ManagedFeedImage>(entityName: entity().name!)
-	}
-
 	@NSManaged var id: UUID
 	@NSManaged var imageDescription: String?
 	@NSManaged var location: String?
