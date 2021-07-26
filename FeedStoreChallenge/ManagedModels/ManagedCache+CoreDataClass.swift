@@ -19,11 +19,11 @@ public class ManagedCache: NSManagedObject {
 	}
 
 	@NSManaged public var timestamp: Date
-	@NSManaged public var feedImage: NSOrderedSet
+	@NSManaged public var feedImages: NSOrderedSet
 
 	convenience init(context: NSManagedObjectContext, feed: [LocalFeedImage], timestamp: Date) {
 		self.init(context: context)
-		self.feedImage = NSOrderedSet(array: feed.map { localFeed in
+		self.feedImages = NSOrderedSet(array: feed.map { localFeed in
 			self.timestamp = timestamp
 			let managedFeedImage = ManagedFeedImage(context: context)
 			managedFeedImage.id = localFeed.id
@@ -35,7 +35,7 @@ public class ManagedCache: NSManagedObject {
 	}
 
 	func toModels() -> [LocalFeedImage] {
-		return feedImage.compactMap { ($0 as? ManagedFeedImage) }
+		return feedImages.compactMap { ($0 as? ManagedFeedImage) }
 			.map { LocalFeedImage(
 				id: $0.id,
 				description: $0.imageDescription,
