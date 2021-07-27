@@ -65,11 +65,10 @@ public final class CoreDataFeedStore: FeedStore {
 	public func deleteCachedFeed(completion: @escaping DeletionCompletion) {
 		let context = context
 		context.performAndWait {
-			let fetchRequest: NSFetchRequest = ManagedCache.fetchRequest()
 			do {
-				let result = try self.context.fetch(fetchRequest)
-				result.first.map(context.delete)
-				try self.context.save()
+				try context.fetch(ManagedCache.fetchRequest()).first
+					.map(context.delete)
+					.map(context.save)
 				completion(nil)
 			} catch {
 				context.rollback()
