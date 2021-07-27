@@ -30,9 +30,8 @@ public final class CoreDataFeedStore: FeedStore {
 
 	public func retrieve(completion: @escaping RetrievalCompletion) {
 		context.perform {
-			let fetchRequest: NSFetchRequest = ManagedCache.fetchRequest()
 			do {
-				let result = try self.context.fetch(fetchRequest)
+				let result: [ManagedCache] = try self.context.fetch(ManagedCache.fetchRequest())
 				if let managedCache = result.first {
 					completion(.found(feed: managedCache.toModels(), timestamp: managedCache.timestamp))
 				} else {
